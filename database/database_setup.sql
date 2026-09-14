@@ -54,7 +54,7 @@ CREATE TABLE SMS_Message (
 
 CREATE TABLE System_logs (
     log_id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'Unique identifier for each system log entry',
-    transaction_id INT NOT NULL UNIQUE COMMENT 'Links this log entry to its corresponding transaction',
+    transaction_id INT NOT NULL COMMENT 'Links this log entry to its corresponding transaction',
     log_time DATETIME COMMENT 'Date and time the system recorded this transaction event',
     FOREIGN KEY (transaction_id) REFERENCES Transactions(transaction_id)
 );
