@@ -16,7 +16,7 @@ The system will:
 
 - **[Fidelis Mwiti](https://github.com/mwiti-fidelis)**
 - **[Ephraim Mulilo](https://github.com/ephraimm-zm)**
-- **[Theresse](https://github.com/nshimyumurwa)**
+- **[Therese](https://github.com/nshimyumurwa)**
 
 ## System Architecture
 
