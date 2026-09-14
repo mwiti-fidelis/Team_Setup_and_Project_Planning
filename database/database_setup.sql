@@ -14,51 +14,56 @@ DROP TABLE IF EXISTS users;
 
 
 CREATE TABLE Transaction_type (
-    type_id INT AUTO_INCREMENT PRIMARY KEY,
-    type_name VARCHAR(20) NOT NULL,
-    description VARCHAR(50)
+    type_id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'Unique identifier for each transaction type',
+    type_name VARCHAR(20) NOT NULL COMMENT 'Short name of the transaction type (e.g. Send Money, Cash Out)',
+    description VARCHAR(50) COMMENT 'Brief explanation of what this transaction type represents'
 );
 
 CREATE TABLE USERS (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    full_name VARCHAR(30) NOT NULL, 
-    phone_number VARCHAR(20) NOT NULL UNIQUE, 
-    momo_code VARCHAR(20) 
+    user_id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'Unique identifier for each user',
+    full_name VARCHAR(30) NOT NULL COMMENT 'Full name of the user', 
+    phone_number VARCHAR(20) NOT NULL UNIQUE COMMENT 'User''s unique phone number, used to identify their MoMo account', 
+    momo_code VARCHAR(20) COMMENT 'MoMo merchant/agent code associated with the user, if applicable'
 );
 
 CREATE TABLE Transactions (
-    transaction_id INT AUTO_INCREMENT PRIMARY KEY COMMENT '____',
-    financial_txId VARCHAR(20) NOT NULL UNIQUE COMMENT '____',
-    transaction_type_Id INT NOT NULL COMMENT '____',
-    sender_id INT NOT NULL COMMENT '____',
-    receiver_id INT NOT NULL COMMENT '____',
-    Amount DECIMAL(10,2) NOT NULL COMMENT '____',
-    balance_after DECIMAL(10,2) COMMENT '____',
-    transaction_time DATETIME NOT NULL COMMENT '____',
-    transaction_status VARCHAR(20) NOT NULL COMMENT '____',
+    transaction_id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'Unique identifier for each transaction',
+    financial_txId VARCHAR(20) NOT NULL UNIQUE COMMENT 'Unique transaction reference issued by the MoMo/telecom provider',
+    transaction_type_Id INT NOT NULL COMMENT 'References the type of transaction (e.g. Send Money, Airtime Purchase)',
+    sender_id INT NOT NULL COMMENT 'References the user who initiated/sent the transaction',
+    receiver_id INT NOT NULL COMMENT 'References the user who received the funds or service',
+    Amount DECIMAL(10,2) NOT NULL CHECK (Amount > 0) COMMENT 'Transaction amount in RWF; must be positive',
+    balance_after DECIMAL(10,2) COMMENT 'Account balance immediately after the transaction completed',
+    transaction_time DATETIME NOT NULL COMMENT 'Date and time the transaction occurred',
+    transaction_status VARCHAR(20) NOT NULL COMMENT 'Current status of the transaction (e.g. Completed, Pending, Failed)',
     FOREIGN KEY (transaction_type_Id) REFERENCES Transaction_type(type_id),
     FOREIGN KEY (sender_id) REFERENCES USERS(user_id),
     FOREIGN KEY (receiver_id) REFERENCES USERS(user_id)
 );
 
 CREATE TABLE SMS_Message (
-    sms_id INT AUTO_INCREMENT PRIMARY KEY COMMENT '____',
-    transaction_id INT NOT NULL UNIQUE COMMENT '____',
-    date_sent DATETIME COMMENT '____',
-    address VARCHAR(20) COMMENT '____',
-    raw_body TEXT COMMENT '____',
-    read_status VARCHAR(10) COMMENT '____',
-    service_center VARCHAR(20) COMMENT '____',
+    sms_id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'Unique identifier for each SMS record',
+    transaction_id INT NOT NULL UNIQUE COMMENT 'Links this SMS notification to its corresponding transaction',
+    date_sent DATETIME COMMENT 'Date and time the SMS notification was sent',
+    address VARCHAR(20) COMMENT 'Sender address or short code of the SMS (e.g. M-Money)',
+    raw_body TEXT COMMENT 'Full raw text content of the SMS message',
+    read_status VARCHAR(10) COMMENT 'Whether the SMS has been read (Read/Unread)',
+    service_center VARCHAR(20) COMMENT 'Phone number of the SMS service center that relayed the message',
     FOREIGN KEY (transaction_id) REFERENCES Transactions(transaction_id)
 );
 
 CREATE TABLE System_logs (
-    log_id INT AUTO_INCREMENT PRIMARY KEY COMMENT '____',
-    transaction_id INT NOT NULL UNIQUE COMMENT '____',
-    log_time DATETIME COMMENT '____',
+    log_id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'Unique identifier for each system log entry',
+    transaction_id INT NOT NULL UNIQUE COMMENT 'Links this log entry to its corresponding transaction',
+    log_time DATETIME COMMENT 'Date and time the system recorded this transaction event',
     FOREIGN KEY (transaction_id) REFERENCES Transactions(transaction_id)
 );
 
+
+CREATE INDEX idx_phone_number ON users(phone_number);
+CREATE INDEX idx_transaction_time ON transactions(transaction_time);
+CREATE INDEX idx_sender_id ON transactions(sender_id);
+CREATE INDEX idx_receiver_id ON transactions(receiver_id);
 
 
 INSERT INTO transaction_type (type_name, description) VALUES
@@ -95,3 +100,4 @@ INSERT INTO system_logs (transaction_id, log_time) VALUES
 (3, '2026-09-11 14:22:01'),
 (4, '2026-09-12 11:05:01'),
 (5, '2026-09-13 16:40:01');
+
