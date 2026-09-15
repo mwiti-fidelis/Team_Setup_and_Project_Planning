@@ -1,0 +1,79 @@
+ {
+    "user": {
+        "user_id": 1,
+        "full_name": "Linda Green",
+        "phone_number": "250790777777",
+        "momo_code": "61690"
+    },
+    "transaction_type": {
+        "type_id": 1,
+        "type_name": "Send Money",
+        "description": "*165*S*1000 RWF transferred to Linda Green (250788999999) from 36521838 at 2024-05-31 15:39:56 . Fee was: 20 RWF. New balance: 1480 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#",
+    },
+    "transaction": {
+        "transaction_id": 1,
+        "financial_txId": "49894890981",
+        "transaction_type_id": 1,
+        "sender_id": 2,
+        "receiver_id": 1,
+        "amount": 1000.00,
+        "balance_after": 2000.00,
+        "transaction_time": "2024-05-31 12:57:20",
+        "transaction_status": "Completed"
+    },
+    "sms_message": {
+        "sms_id": 1,
+        "transaction_id": 1,
+        "date_sent": "2024-05-31 12:57:20",
+        "address": "M-Money",
+        "raw_body": "*165*S*1000 RWF transferred to Linda Green (250788999999) from 36521838 at 2024-05-31 15:39:56 . Fee was: 20 RWF. New balance: 1480 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#",
+        "read_status": "Read",
+        "service_center": null
+    },
+    "system_log": {
+        "log_id": 1,
+        "transaction_id": 1,
+        "log_time": "2024-05-31 12:57:20"
+    },
+    "complete_transaction": {
+        "transaction_id": 1,
+        "financial_txId": "49894890981",
+        "amount": 1000.00,
+        "balance_after": 2000.00,
+        "transaction_time": "2024-05-31 12:57:20",
+        "transaction_status": "Completed",
+        "sender": {
+            "user_id": 2,
+            "full_name": "Robert Brown",
+            "phone_number": "250788999999",
+            "momo_code": "36521838"
+        },
+        "receiver": {
+            "user_id": 1,
+            "full_name": "Linda Green",
+            "phone_number": "250790777777",
+            "momo_code": "61690"
+        },
+        "transaction_type": {
+            "type_id": 1,
+            "type_name": "Send Money",
+            "description": "*165*S*1000 RWF transferred to Linda Green (250788999999) from 36521838 at 2024-05-31 15:39:56 . Fee was: 20 RWF. New balance: 1480 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#"
+        },
+        "sms_message": {
+            "sms_id": 1,
+            "transaction_id": 1,
+            "date_sent": "2024-05-31 12:57:20",
+            "address": "M-Money",
+            "raw_body": "*165*S*1000 RWF transferred to Linda Green (250788999999) from 36521838 at 2024-05-31 15:39:56 . Fee was: 20 RWF. New balance: 1480 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#",
+            "read_status": "Read",
+            "service_center": null
+        },
+        "system_log": [
+            {
+                "log_id": 1,
+                "transaction_id": 1,
+                "log_time": "2024-05-31 12:57:20"
+            }
+        ]
+    }
+ }
