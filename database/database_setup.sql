@@ -1,10 +1,5 @@
 -- MoMo SMS Data Processing System
 -- Database Setup Script
--- Author: nshimyumurwa
--- Team: Team_Setup_and_Project_Planning
--- Date: 14/09/2026
-
-
 
 DROP TABLE IF EXISTS sms_message;
 DROP TABLE IF EXISTS system_logs;
