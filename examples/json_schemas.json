@@ -1,39 +1,91 @@
- {
-    "user": {
-        "user_id": 1,
-        "full_name": "Jean Uwimana",
-        "phone_number": "250788123456",
-        "momo_code": "MC1001"
-    },
-    "transaction_type": {
-        "type_id": 1,
-        "type_name": "Send Money",
-        "description": "Transfer of funds from one user to another"
-    },
-    "transaction": {
-        "transaction_id": 1,
-        "financial_txId": "TX00001",
-        "transaction_type_id": 1,
-        "sender_id": 1,
-        "receiver_id": 2,
-        "amount": 15000.00,
-        "balance_after": 85000.00,
-        "transaction_time": "2026-09-10 09:15:00",
-        "transaction_status": "Completed"
-    },
-    "sms_message": {
-        "sms_id": 1,
-        "transaction_id": 1,
-        "date_sent": "2026-09-10 09:15:02",
-        "address": "M-Money",
-        "raw_body": "You have sent 15000 RWF to Alice Mukamana.",
-        "read_status": "Read",
-        "service_center": "+250788000001"
-    },
-    "system_logs": {
-        "log_id": 1,
-        "transaction_id": 1,
-        "log_time": "2026-09-10 09:15:01"
+[
+    {
+        "sender": {
+            "user_id": 1,
+            "full_name": "Abebe Chala CHEBUDIE",
+            "phone_number": "250795963036",
+            "momo_code": "36521838"
+        },
+          "receiver": {
+            "user_id": 2,
+            "full_name": "Jane Smith",
+            "phone_number": null,
+            "momo_code": "12845"
+        },
+        "transaction_type": {
+            "type_id": 1,
+            "type_name": "Send Money",
+            "description": "Transfer of funds from one user to another"
+        },
+        "transaction": {
+            "transaction_id": 1,
+            "financial_txId": "73214484437",
+            "transaction_type_id": 1,
+            "sender_id": 1,
+            "receiver_id": 2,
+            "amount": 1000.00,
+            "balance_after": 1000.00,
+            "transaction_time": "2024-05-10 16:31:39",
+            "transaction_fee": 0.00,
+            "transaction_status": "-1"
+        },
+        "sms_message": {
+            "sms_id": 1,
+            "transaction_id": 1,
+            "date_sent": "2024-05-10 16:31:39",
+            "address": "M-Money",
+            "raw_body": "TxId: 73214484437. Your payment of 1,000 RWF to Jane Smith 12845 has been completed at 2024-05-10 16:31:39. Your new balance: 1,000 RWF. Fee was 0 RWF.Kanda*182*16# wiyandikishe muri poromosiyo ya BivaMoMotima, ugire amahirwe yo gutsindira ibihembo bishimishije.",
+            "read_status": 1,
+            "service_center": "+250788110381"
+        },
+        "system_logs": {
+            "log_id": 1,
+            "transaction_id": 1,
+            "log_time": "2024-05-10 16:31:39"
+        }
+    },{
+        "sender": {
+            "user_id": 1,
+            "full_name": "Abebe Chala CHEBUDIE",
+            "phone_number": "250795963036",
+            "momo_code": "36521838"
+        },
+          "receiver": {
+            "user_id": 2,
+            "full_name": "Sophia",
+            "phone_number": "250790777777",
+            "momo_code": null
+        },
+        "transaction_type": {
+            "type_id": 1,
+            "type_name": "Cash Out",
+            "description": "Withdrawal of funds to cash"
+        },
+        "transaction": {
+            "transaction_id": 5,
+            "financial_txId": "14098463509",
+            "transaction_type_id": 1,
+            "sender_id": 1,
+            "receiver_id": 6,
+            "amount": 20000.00,
+            "balance_after": 6400.00,
+            "transaction_time": "2024-05-26 02:10:27",
+            "transaction_fee": 350.00,
+            "transaction_status": "-1"
+        },
+        "sms_message": {
+            "sms_id": 1,
+            "transaction_id": 5,
+            "date_sent": "2024-05-26 02:10:27",
+            "address": "M-Money",
+            "raw_body": "You Abebe Chala CHEBUDIE (*********036) have via agent: Agent Sophia (250790777777), withdrawn 20000 RWF from your mobile money account: 36521838 at 2024-05-26 02:10:27 and you can now collect your money in cash. Your new balance: 6400 RWF. Fee paid: 350 RWF. Message from agent: 1. Financial Transaction Id: 14098463509.",
+            "read_status": 1,
+            "service_center": "+250788110381"
+        },
+        "system_logs": {
+            "log_id": 1,
+            "transaction_id": 1,
+            "log_time": "2024-05-26 02:10:27"
+        }
     }
-}
- 
+]
