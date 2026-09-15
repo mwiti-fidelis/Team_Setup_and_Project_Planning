@@ -26,7 +26,7 @@ The high-level system architecture has been designed using Lucidchart.
 [View Architecture Diagram](https://lucid.app/lucidchart/f3f6d837-f0e9-4b5c-82b6-fe84a5c69c8b/edit?invitationId=inv_98b05898-4c4a-4d73-89ef-c3f6efa1b5e7&page=0_0#)
 
 **ERD and Database Design:**  
-[View ERD and Database Design](ERD_and_Database_Design_Document)
+[View ERD and Database Design](https://docs.google.com/document/d/13JHUDYC6kKOt0D5DObEcpIL_LN5z0mpmzeDvZD5hEyc/edit?tab=t.0)
 
 **Scrum Board:**  
 [View Scrum Board](https://github.com/users/mwiti-fidelis/projects/3/views/1)
