@@ -1,79 +1,77 @@
  {
     "user": {
         "user_id": 1,
-        "full_name": "Linda Green",
-        "phone_number": "250790777777",
-        "momo_code": "61690"
+        "full_name": "Jean Uwimana",
+        "phone_number": "250788123456",
+        "momo_code": "MC1001"
     },
     "transaction_type": {
         "type_id": 1,
         "type_name": "Send Money",
-        "description": "*165*S*1000 RWF transferred to Linda Green (250788999999) from 36521838 at 2024-05-31 15:39:56 . Fee was: 20 RWF. New balance: 1480 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#",
+        "description": "Transfer of funds from one user to another"
     },
     "transaction": {
         "transaction_id": 1,
-        "financial_txId": "49894890981",
+        "financial_txId": "TX00001",
         "transaction_type_id": 1,
-        "sender_id": 2,
-        "receiver_id": 1,
-        "amount": 1000.00,
-        "balance_after": 2000.00,
-        "transaction_time": "2024-05-31 12:57:20",
+        "sender_id": 1,
+        "receiver_id": 2,
+        "amount": 15000.00,
+        "balance_after": 85000.00,
+        "transaction_time": "2026-09-10 09:15:00",
         "transaction_status": "Completed"
     },
     "sms_message": {
         "sms_id": 1,
         "transaction_id": 1,
-        "date_sent": "2024-05-31 12:57:20",
+        "date_sent": "2026-09-10 09:15:02",
         "address": "M-Money",
-        "raw_body": "*165*S*1000 RWF transferred to Linda Green (250788999999) from 36521838 at 2024-05-31 15:39:56 . Fee was: 20 RWF. New balance: 1480 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#",
+        "raw_body": "You have sent 15000 RWF to Alice Mukamana.",
         "read_status": "Read",
-        "service_center": null
+        "service_center": "+250788000001"
     },
     "system_log": {
         "log_id": 1,
         "transaction_id": 1,
-        "log_time": "2024-05-31 12:57:20"
+        "log_time": "2026-09-10 09:15:01"
     },
     "complete_transaction": {
         "transaction_id": 1,
-        "financial_txId": "49894890981",
-        "amount": 1000.00,
-        "balance_after": 2000.00,
-        "transaction_time": "2024-05-31 12:57:20",
+        "financial_txId": "TX00001",
+        "amount": 15000.00,
+        "balance_after": 85000.00,
+        "transaction_time": "2026-09-10 09:15:00",
         "transaction_status": "Completed",
         "sender": {
-            "user_id": 2,
-            "full_name": "Robert Brown",
-            "phone_number": "250788999999",
-            "momo_code": "36521838"
+            "user_id": 1,
+            "full_name": "Jean Uwimana",
+            "phone_number": "250788123456",
+            "momo_code": "MC1001"
         },
         "receiver": {
-            "user_id": 1,
-            "full_name": "Linda Green",
-            "phone_number": "250790777777",
-            "momo_code": "61690"
+            "user_id": 2,
+            "full_name": "Alice Mukamana",
+            "phone_number": "250788234567",
+            "momo_code": "MC1002"
         },
         "transaction_type": {
             "type_id": 1,
             "type_name": "Send Money",
-            "description": "*165*S*1000 RWF transferred to Linda Green (250788999999) from 36521838 at 2024-05-31 15:39:56 . Fee was: 20 RWF. New balance: 1480 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#"
+            "description": "Transfer of funds from one user to another"
         },
         "sms_message": {
             "sms_id": 1,
             "transaction_id": 1,
-            "date_sent": "2024-05-31 12:57:20",
+            "date_sent": "2026-09-10 09:15:02",
             "address": "M-Money",
-            "raw_body": "*165*S*1000 RWF transferred to Linda Green (250788999999) from 36521838 at 2024-05-31 15:39:56 . Fee was: 20 RWF. New balance: 1480 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#",
+            "raw_body": "You have sent 15000 RWF to Alice Mukamana.",
             "read_status": "Read",
-            "service_center": null
+            "service_center": "+250788000001"
         },
-        "system_log": [
-            {
+        "system_logs": {
                 "log_id": 1,
                 "transaction_id": 1,
-                "log_time": "2024-05-31 12:57:20"
+                "log_time": "2026-09-10 09:15:01"
             }
-        ]
     }
  }
