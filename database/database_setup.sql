@@ -22,7 +22,7 @@ CREATE TABLE Transaction_type (
 CREATE TABLE USERS (
     user_id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'Unique identifier for each user',
     full_name VARCHAR(30) NOT NULL COMMENT 'Full name of the user', 
-    phone_number VARCHAR(20) NOT NULL UNIQUE COMMENT 'User''s unique phone number, used to identify their MoMo account', 
+    phone_number VARCHAR(20) UNIQUE COMMENT 'User''s unique phone number, used to identify their MoMo account', 
     momo_code VARCHAR(20) COMMENT 'MoMo merchant/agent code associated with the user, if applicable'
 );
 
@@ -101,3 +101,28 @@ INSERT INTO system_logs (transaction_id, log_time) VALUES
 (4, '2026-09-12 11:05:01'),
 (5, '2026-09-13 16:40:01');
 
+
+-- =====================================================
+-- Sample Queries for Documentation
+-- =====================================================
+
+-- 1. All transactions for a specific user (as sender or receiver)
+SELECT t.transaction_id, t.financial_txId, u1.full_name AS sender, u2.full_name AS receiver, t.Amount, t.transaction_status
+FROM transactions t
+JOIN users u1 ON t.sender_id = u1.user_id
+JOIN users u2 ON t.receiver_id = u2.user_id
+WHERE u1.user_id = 1 OR u2.user_id = 1;
+
+-- 2. Total amount sent by each user
+SELECT u.full_name, SUM(t.Amount) AS total_sent
+FROM users u
+JOIN transactions t ON u.user_id = t.sender_id
+GROUP BY u.full_name;
+
+-- 3. Transactions with their type name
+SELECT t.transaction_id, tt.type_name, t.Amount, t.transaction_status
+FROM transactions t
+JOIN transaction_type tt ON t.transaction_type_Id = tt.type_id;
+
+-- 4. All pending transactions
+SELECT * FROM transactions WHERE transaction_status = 'Pending';
