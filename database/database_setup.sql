@@ -1,3 +1,4 @@
+-- Active: 1763027588815@@mysql-adc68ef-alustudent-0108.e.aivencloud.com@13577
 -- MoMo SMS Data Processing System
 -- Database Setup Script
 
@@ -71,13 +72,13 @@ INSERT INTO transaction_type (type_name, description) VALUES
 
 INSERT INTO users (full_name, phone_number, momo_code) VALUES
 ('Abebe Chala CHEBUDIE', '250795963036', '36521838'),
-('Jane Smith', '250790777777', '12845'),
-('Samuel Carter', '', '14965'),
+('Jane Smith', NULL, '12845'),
+('Samuel Carter', NULL, '14965'),
 ('Alex Doe', '250791666666', '23199'),
-('John', '250788999999'),
-('Sophia', '250790777777')
+('John', '250788999999', NULL),
+('Sophia', '250790777777', NULL);
 
-INSERT INTO transactions (financial_txId, transaction_type_Id, sender_id, receiver_id, Amount, balance_after, transation_fee, transaction_time, transaction_status) VALUES
+INSERT INTO transactions (financial_txId, transaction_type_Id, sender_id, receiver_id, Amount, balance_after, transaction_fee, transaction_time, transaction_status) VALUES
 ('73214484437', 1, 1, 2, 1000.00, 1000.00, 0.00, '2024-05-10 16:31:39', '-1'),
 ('17818959211', 1, 1, 3, 2000.00, 38400.00, 0.00, '2024-05-11 18:48:42', '-1'),
 ('18249226395', 1, 1, 3, 2000.00, 460.00, 0.00, '2024-05-14 21:29:35', '-1'),
