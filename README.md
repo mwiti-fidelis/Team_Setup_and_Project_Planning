@@ -106,3 +106,23 @@ sms_message
 System_logs
     ↓
 system_logs
+
+### AI Usage Policy Compliance
+#By Therese
+    AI was used to:
+    -Troubleshoot MySQL/PowerShell installation and setup issue
+    -Generate fictional placeholder data for testing (to be replaced with real parsed data)
+    -Help draft sample SQL queries for documentation
+
+#Ephraim Mulilo
+     AI was used in this part as follows:
+    - Understand the assignment requirements.
+    - Review JSON syntax work for basic errors.
+    - Review the README to make sure the JSON documentation is clear.
+    - Improve the grammar and formatting of the README."
+
+#By Fidelis Mwiti
+    AI usage included:
+        -Query AI to know the meaning of abbreviations used in the raw momo.xml such as "toa", "sc_toa", e.t.c.
+        -Queried how it is possible that some transactions do not have any transaction id.
+        -Used grammarly for grammar correction and formating of the ERD design documentation.
