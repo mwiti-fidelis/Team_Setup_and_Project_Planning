@@ -105,4 +105,4 @@ sms_message
 
 System_logs
     ↓
-system_log
+system_logs

@@ -30,7 +30,7 @@
         "read_status": "Read",
         "service_center": "+250788000001"
     },
-    "system_log": {
+    "system_logs": {
         "log_id": 1,
         "transaction_id": 1,
         "log_time": "2026-09-10 09:15:01"
