@@ -34,44 +34,6 @@
         "log_id": 1,
         "transaction_id": 1,
         "log_time": "2026-09-10 09:15:01"
-    },
-    "complete_transaction": {
-        "transaction_id": 1,
-        "financial_txId": "TX00001",
-        "amount": 15000.00,
-        "balance_after": 85000.00,
-        "transaction_time": "2026-09-10 09:15:00",
-        "transaction_status": "Completed",
-        "sender": {
-            "user_id": 1,
-            "full_name": "Jean Uwimana",
-            "phone_number": "250788123456",
-            "momo_code": "MC1001"
-        },
-        "receiver": {
-            "user_id": 2,
-            "full_name": "Alice Mukamana",
-            "phone_number": "250788234567",
-            "momo_code": "MC1002"
-        },
-        "transaction_type": {
-            "type_id": 1,
-            "type_name": "Send Money",
-            "description": "Transfer of funds from one user to another"
-        },
-        "sms_message": {
-            "sms_id": 1,
-            "transaction_id": 1,
-            "date_sent": "2026-09-10 09:15:02",
-            "address": "M-Money",
-            "raw_body": "You have sent 15000 RWF to Alice Mukamana.",
-            "read_status": "Read",
-            "service_center": "+250788000001"
-        },
-        "system_logs": {
-                "log_id": 1,
-                "transaction_id": 1,
-                "log_time": "2026-09-10 09:15:01"
-            }
     }
- }
+}
+ 
