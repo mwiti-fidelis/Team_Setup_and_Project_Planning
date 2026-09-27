@@ -1,5 +1,9 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
+import base64
+
+USERNAME = "admin"
+PASSWORD = "password123"
 
 def load_data():
     with open('data.json', 'r') as file:
@@ -11,8 +15,38 @@ def save_data(data):
         json.dump(data, file, indent=4)
 
 class RequestHandler(BaseHTTPRequestHandler):
+    def is_authenticated(self):
+        auth = self.headers.get('Authorization')
+
+        if auth is None or not auth.startswith('Basic '):
+            self.reject_request()
+            return False
+
+        try:
+            encoded_part = auth.split(' ')[1]
+            decoded = base64.b64decode(encoded_part).decode('utf-8')
+            user, pwd = decoded.split(':')
+        except Exception:
+            self.reject_request()
+            return False
+
+        if user == USERNAME and pwd == PASSWORD:
+            return True
+
+        self.reject_request()
+        return False
+
+    def reject_request(self):
+        self.send_response(401)
+        self.send_header('WWW-Authenticate', 'Basic realm="Transactions API"')
+        self.send_header('Content-Type', 'application/json')
+        self.end_headers()
+        self.wfile.write(json.dumps({"message": "Unauthorized"}).encode())
+
     def do_GET(self):
         print("Get request received")
+        if not self.is_authenticated():
+            return
         if not self.path.startswith('/transactions'):
             self.send_response(404)
             self.end_headers()
@@ -46,6 +80,8 @@ class RequestHandler(BaseHTTPRequestHandler):
                 self.end_headers()
     def do_POST(self):
         print("Post request received")
+        if not self.is_authenticated():
+            return
         content_length = int(self.headers['Content-Length'])
         body = self.rfile.read(content_length)
         data = json.loads(body)
@@ -62,6 +98,8 @@ class RequestHandler(BaseHTTPRequestHandler):
 
     def do_PUT(self):
         print("Put request received")
+        if not self.is_authenticated():
+            return
         parts = self.path.split('/')
         transaction_id = parts[2]
         content_length = int(self.headers['Content-Length'])
@@ -90,6 +128,8 @@ class RequestHandler(BaseHTTPRequestHandler):
     def do_DELETE(self):
             
         print("Delete request received")
+        if not self.is_authenticated():
+            return
         parts = self.path.split('/')
         transaction_id = parts[2]
         transactions = load_data()
@@ -112,4 +152,4 @@ class RequestHandler(BaseHTTPRequestHandler):
 
 server = HTTPServer(('localhost', 8080), RequestHandler)
 print("Server started on http://localhost:8080")
-server.serve_forever() 
+server.serve_forever()
