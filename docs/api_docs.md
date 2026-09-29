@@ -12,8 +12,8 @@ A simple REST-style CRUD API built with Python's built-in `http.server` module a
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/mwiti-fidelis/Team_Setup_and_Project_Planning.git
+cd Team_Setup_and_Project_Planning/api
 ```
 
 2. Make sure `data.json` exists in the project directory.
