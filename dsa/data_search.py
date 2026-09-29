@@ -83,7 +83,7 @@ def search_efficiency_test():
         except ValueError as e:
             print('Invalid transaction Id', e)
     else:
-        print("Invalid search choice. Please enter yes/no")
+        print("Invalid search choice. Please retry and enter either yes/no. Exiting...")
 
 
 if __name__ == "__main__":
